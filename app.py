@@ -523,10 +523,10 @@ def database_check():
 
 # ---------------- START APPLICATION ----------------
 
+with app.app_context():
+    db.create_all()
+
+print("Frontdesk database tables are ready!")
+
 if __name__ == "__main__":
-
-    with app.app_context():
-        db.create_all()
-
-    print("Frontdesk database tables are ready!")
     app.run(debug=True)
